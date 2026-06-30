@@ -47,15 +47,17 @@ h1, h2, h3, .display-3 {
 }
 
 .display-3 {
-    font-size: clamp(2.4rem, 5vw + 1rem, 4.2rem);
+    font-size: clamp(2.1rem, 3vw + 1rem, 3.4rem);
     font-weight: 800;
-    line-height: 1.1;
+    line-height: 1.12;
+    max-width: 22ch;
 }
 
 .lead {
     font-weight: 300;
-    font-size: clamp(1.05rem, 0.7vw + 0.95rem, 1.25rem);
+    font-size: clamp(1.05rem, 0.7vw + 0.95rem, 1.2rem);
     color: var(--bs-secondary-color);
+    max-width: 38rem;
 }
 
 a { color: var(--echo-purple-light); text-decoration: none; transition: color 0.15s ease; }
@@ -125,12 +127,20 @@ a:hover { color: #fff; }
     z-index: 0;
 }
 
-.hero > .container { position: relative; z-index: 2; }
+.hero > .container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.25rem;
+}
 
 .hero-logo {
-    height: 160px;
+    height: clamp(110px, 14vw, 160px);
     width: auto;
-    margin-top: 0.5rem;
+    display: block;
 }
 
 /* ─── Hero connection map (UK ↔ Romania backdrop) ─── */
@@ -224,11 +234,11 @@ a:hover { color: #fff; }
 
 /* ─── Primary call to action and social pill bar ─── */
 .cta-row {
-    display: inline-flex;
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 0.85rem;
-    margin-top: 0.5rem;
+    margin-top: 0.25rem;
 }
 
 .btn {
